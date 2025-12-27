@@ -2,49 +2,47 @@
 <html lang="pt-br">
 <head>
 <meta charset="UTF-8">
-<title>Gerador de Login</title>
+<title>Painel ADM Completo</title>
 
-<!-- Firebase SDK -->
 <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
 
 <style>
-body {
-  background:#111;
-  color:#fff;
-  font-family: Arial;
-  padding:20px;
-}
-button {
-  padding:10px;
-  margin-top:10px;
-  cursor:pointer;
-}
-.box {
-  border:1px solid #333;
-  padding:15px;
-  margin-top:15px;
-}
+body { background:#111; color:#fff; font-family:Arial; padding:20px }
+button, select { padding:6px; margin:3px }
+input { padding:6px; width:120px }
+.box { border:1px solid #333; padding:10px; margin-top:15px }
+.user { border:1px solid #444; padding:8px; margin-top:8px }
 </style>
 </head>
 
 <body>
 
-<h2>Gerador de Usuário e Senha</h2>
+<h2>Painel ADM</h2>
 
-<button onclick="gerarLogin()">GERAR LOGIN</button>
+<!-- GERADOR -->
+<div class="box">
+<h3>Gerar Login</h3>
 
-<div id="resultado" class="box" style="display:none;"></div>
+Validade (dias):
+<input id="dias" type="number" value="1">
 
-<script>
-// 🔥 FIREBASE CONFIG
-var firebaseConfig = {
-  apiKey: "AIzaSyBGNWLH88jJfMbpeqnUNdDgL7rZBOl54q0",
-  databaseURL: "https://snoopy-obb-d9aff-default-rtdb.firebaseio.com",
-  projectId: "snoopy-obb-d9aff"
-};
+Dispositivos:
+<select id="limite">
+  <option value="1">1</option>
+  <option value="2">2</option>
+</select>
 
-firebase.initializeApp(firebaseConfig);
-var db = firebase.database();
+<br><br>
+<button onclick="gerar()">GERAR LOGIN</button>
 
-// 🔐 GERAR LOGIN (USUÁRI
+<div id="res"></div>
+</div>
+
+<!-- LISTA -->
+<div class="box">
+<h3>Logins Criados</h3>
+<div id="lista"></div>
+</div>
+
+<sc
