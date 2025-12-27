@@ -2,9 +2,9 @@
 <html lang="pt-br">
 <head>
 <meta charset="UTF-8">
-<title>Painel ADM</title>
+<title>Gerador de Login</title>
 
-<!-- Firebase SDK (SOMENTE DATABASE) -->
+<!-- Firebase SDK -->
 <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
 
@@ -15,38 +15,36 @@ body {
   font-family: Arial;
   padding:20px;
 }
-input, button {
-  padding:8px;
-  margin:5px;
-}
-.user {
-  border:1px solid #333;
+button {
   padding:10px;
   margin-top:10px;
-}
-button {
   cursor:pointer;
+}
+.box {
+  border:1px solid #333;
+  padding:15px;
+  margin-top:15px;
 }
 </style>
 </head>
 
 <body>
 
-<h2>Painel Administrativo</h2>
+<h2>Gerador de Usuário e Senha</h2>
 
-<div id="login">
-  <input id="email" placeholder="Usuário ADM"><br>
-  <input id="senha" type="password" placeholder="Senha"><br>
-  <button onclick="login()">Entrar</button>
-</div>
+<button onclick="gerarLogin()">GERAR LOGIN</button>
 
-<div id="painel" style="display:none;">
-  <h3>Usuários</h3>
-  <div id="lista"></div>
-</div>
+<div class="box" id="resultado" style="display:none;"></div>
 
 <script>
-// 🔥 CONFIG FIREBASE (DATABASE)
+// 🔥 CONFIG FIREBASE (SEU PROJETO)
 var firebaseConfig = {
   apiKey: "AIzaSyBGNWLH88jJfMbpeqnUNdDgL7rZBOl54q0",
-  authDomain
+  databaseURL: "https://snoopy-obb-d9aff-default-rtdb.firebaseio.com",
+  projectId: "snoopy-obb-d9aff"
+};
+
+firebase.initializeApp(firebaseConfig);
+var db = firebase.database();
+
+// 🔐 GERAD
