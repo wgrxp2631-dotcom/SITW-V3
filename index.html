@@ -1,48 +1,15 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-<meta charset="UTF-8">
-<title>Painel ADM Completo</title>
-
-<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
-
-<style>
-body { background:#111; color:#fff; font-family:Arial; padding:20px }
-button, select { padding:6px; margin:3px }
-input { padding:6px; width:120px }
-.box { border:1px solid #333; padding:10px; margin-top:15px }
-.user { border:1px solid #444; padding:8px; margin-top:8px }
-</style>
-</head>
-
-<body>
-
-<h2>Painel ADM</h2>
-
-<!-- GERADOR -->
-<div class="box">
-<h3>Gerar Login</h3>
-
-Validade (dias):
-<input id="dias" type="number" value="1">
-
-Dispositivos:
-<select id="limite">
-  <option value="1">1</option>
-  <option value="2">2</option>
-</select>
-
-<br><br>
-<button onclick="gerar()">GERAR LOGIN</button>
-
-<div id="res"></div>
-</div>
-
-<!-- LISTA -->
-<div class="box">
-<h3>Logins Criados</h3>
-<div id="lista"></div>
-</div>
-
-<sc
+Loja de Contas - Level 15 * { box-sizing: border-box; font-family: Arial, Helvetica, sans-serif; } body { margin: 0; background:#0f1115; color:#fff; } header { background:#151922; padding:16px 24px; display:flex; align-items:center; justify-content:space-between; } header h1 { font-size:18px; margin:0; color:#4da3ff; } header input { width:40%; padding:8px 12px; border-radius:6px; border:none; } .container { max-width:1100px; margin:40px auto; padding:0 16px; } .card { background:#181c26; border-radius:12px; padding:24px; display:grid; grid-template-columns: 1fr 1fr; gap:24px; } .product-img { background:linear-gradient(135deg,#1f6cff,#ff7a18); border-radius:12px; height:260px; display:flex; align-items:center; justify-content:center; font-size:32px; font-weight:bold; } .price { font-size:28px; color:#00e676; margin:8px 0; } .old { text-decoration:line-through; color:#888; font-size:14px; } .badge { display:inline-block; background:#0d6efd; padding:6px 10px; border-radius:6px; font-size:12px; margin-bottom:12px; } button { background:#0d6efd; border:none; color:#fff; padding:12px 18px; border-radius:8px; font-size:16px; cursor:pointer; } button:hover { background:#0b5ed7; } .checkout { margin-top:40px; background:#181c26; border-radius:12px; padding:24px; } footer { text-align:center; padding:24px; color:#777; font-size:14px; } 
+Minha Loja
+CONTA
+LVL 15
+Entrega Automática 
+Conta Level 15
+Conta pronta, ideal para iniciar no jogo com vantagem.
+De R$ 6,00
+R$ 3,00
+Adicionar ao carrinho 
+Resumo da compra
+Produto: Conta Level 15
+Total: R$ 3,00
+Finalizar compra 
+© 2025 - Minha Loja | Termos de serviço function addToCart() { document.getElementById('checkout').style.display = 'block'; alert('Produto adicionado ao carrinho'); } function finalizar() { alert('Pedido finalizado! (exemplo)'); }
